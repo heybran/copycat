@@ -1,0 +1,64 @@
+<copycat-switch>
+    <template shadowrootmode="open">
+        <style>
+            :host {
+                display: inline-block;
+            }
+            [part="wrapper"] {
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                gap: var(--copycat-switch-gap, 0.5em);
+            }
+            ::slotted(input) {
+                margin: 0;
+                box-sizing: border-box;
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+                --_border-width: var(--copycat-switch-border-width, 2px);
+                border: var(--_border-width) solid var(--copycat-switch-border-color, #adaba8);
+                --_circle-spacing: var(--copycat-switch-circle-spacing, 1px);
+                --_height: var(--copycat-switch-height, 36px);
+                height: var(--_height);
+                --_circle-size: calc(var(--_height) - (var(--_border-width) + var(--_circle-spacing)) * 2);
+                border-radius: var(--_height);
+                --_width: calc(var(--_circle-size) * 2.2);
+                width: var(--_width);
+                appearance: none;
+            }
+            ::slotted(input)::before {
+                box-sizing: border-box;
+                content: "";
+                left: var(--_circle-spacing);
+                position: absolute;
+                top: var(--_circle-spacing);
+                background-color: var(--copycat-switch-background-color, #adaba8);
+                border-radius: 1.7142857143em;
+                transform: translateX(0);
+                transition: transform .25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color .25s cubic-bezier(0.33, 1, 0.68, 1);
+                width: var(--_circle-size);
+                height: var(--_circle-size);
+            }
+            ::slotted(input:checked)::before {
+                transform: translateX(calc(var(--_width) - var(--_circle-size) - var(--_border-width) * 2 - var(--_circle-spacing) * 2));
+                background-color: var(--copycat-switch-color-primary, #1c7ed6);
+            }
+            ::slotted(input:checked) {
+                border-color: var(--copycat-switch-color-primary, #1c7ed6);
+            }
+            ::slotted(label) {
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+            }
+        </style>
+        <div part="wrapper">
+            <slot name="input"></slot>
+            <slot name="label"></slot>
+        </div>
+    </template>
+    <input slot="input" type="checkbox" role="switch" name="allow-notifications" id="allow-notifications">
+    <label slot="label" for="allow-notifications">Allow notifications</label>
+</copycat-switch>

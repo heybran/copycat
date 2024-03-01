@@ -1,0 +1,24 @@
+{
+  "name": "@heybran/copycat-ui",
+  "description": "A collections of Web Components with Declarative Shadow Dom.",
+  "scripts": {
+    "start": "npx http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heybran/copycat-ui.git"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/heybran/copycat-ui/issues"
+  },
+  "author": {
+    "name": "Brandon Zhang",
+    "email": "heybran@proton.me",
+    "url": "https:heybran.cn"
+  },
+  "homepage": "https://github.com/heybran/copycat-ui#readme"
+}
