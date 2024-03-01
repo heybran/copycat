@@ -1,0 +1,6 @@
+@import "https://overpass-30e2.kxcdn.com/overpass.css";
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Overpass", sans-serif;
+}
