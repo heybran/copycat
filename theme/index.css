@@ -1,0 +1,5 @@
+:root {
+    --copycat-theme--form-field-label-spacing: 5px;
+    --copycat-theme--form-field-label-font-weight: normal;
+    --copycat-theme--form-field-outline-offset: 4px;
+}

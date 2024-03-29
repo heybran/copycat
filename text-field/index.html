@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="../theme/index.css">
+
+<copycat-text-field>
+    <template shadowrootmode="open">
+        <style>
+            :host {
+                display: inline-block;
+                --_border-width: var(--copycat-theme--form-field-border-width, 1px);
+                --_border-radius: var(--copycat-theme--form-field-border-radius, 8px);
+                --_border-color: var(--copycat-theme--form-field-border-color, #adaba8);
+                --_label-spacing: var(--copycat-theme--form-field-label-spacing, 6px);
+                --_font-weight: var(--copycat-theme--form-field-label-font-weight, normal);
+                --_color-primary: var(--copycat-theme--color-primary, #1c7ed6);
+                --_outline-offset: var(--copycat-theme--form-field-outline-offset, 3px);
+            }
+            ::slotted(input) {
+                width: 100%;
+                height: auto;
+                background: none;
+                border-radius: var(--_border-radius);
+                min-height: 0;
+                min-width: 0;
+                color: inherit;
+                outline: none;
+                padding: 1ch 1.5ch;
+                -webkit-appearance: none;
+                appearance: none;
+                font: inherit;
+                margin: 0;
+                border: var(--_border-width) solid var(--_border-color);
+                display: flex;
+                align-items: center;
+                position: relative;
+                transition: .15s cubic-bezier(.22,1,.36,1), visibility 0s;
+            }
+            ::slotted(input:focus-visible) {
+                outline: var(--_color-primary) auto 1px;
+                outline-offset: var(--_outline-offset);
+            }
+            ::slotted(label) {
+                font-weight: var(--_font-weight);
+                padding-block-end: var(--_label-spacing);
+                display: inline-block;
+            }
+        </style>
+        <div part="wrapper">
+            <slot name="label"></slot>
+            <slot name="input"></slot>
+        </div>
+    </template>
+    <label slot="label" for="display-name">Display name</label>
+    <input slot="input" type="text" name="display-name" id="display-name">
+</copycat-text-field>

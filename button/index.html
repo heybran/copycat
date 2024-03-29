@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="../theme/index.css">
+
+<copycat-button theme="primary">
+    <template shadowrootmode="open">
+        <style>
+            :host {
+                position: relative;
+                display: inline-flex;
+                --_gap: var(--copycat-theme-button-gap, 0.2em);
+                --_outline-offset: var(--copycat-theme--button-outline-offset, 4px);
+                --_border-radius: var(--copycat-theme--button-border-radius, 8px);
+            }
+            :host([theme="primary"]) {
+                --_color-primary: var(--copycat-theme--color-primary, #1c7ed6);
+                --_text-color: #fff;
+            }
+            ::slotted(button) {
+                background-color: var(--_color-primary);
+                border: 1px solid var(--button-border-color, #dedbd9);
+                color: var(--_text-color, inherit);
+                cursor: pointer;
+                font: inherit;
+                margin: 0;
+                padding: 1ch 1.5ch;
+                border-radius: var(--_border-radius);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: nowrap;
+                transition: .15s cubic-bezier(.22,1,.36,1);
+                width: 100%;
+            }
+            :host([theme="primary"]) ::slotted(button),
+            :host([theme="success"]) ::slotted(button),
+            :host([theme="warning"]) ::slotted(button),
+            :host([theme="neutral"]) ::slotted(button),
+            :host([theme="danger"]) ::slotted(button) {
+                border-color: transparent;
+            }
+            ::slotted(button:focus-visible) {
+                outline: var(--_color-primary) auto 1px;
+                outline-offset: var(--_outline-offset);
+            }
+        </style>
+        <slot></slot>
+    </template>
+    <button type="button">Update</button>
+</copycat-button>

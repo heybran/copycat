@@ -11,6 +11,7 @@
                 gap: var(--copycat-switch-gap, 0.5em);
             }
             ::slotted(input) {
+                flex-shrink: 0;
                 margin: 0;
                 box-sizing: border-box;
                 position: relative;
@@ -50,8 +51,6 @@
             }
             ::slotted(label) {
                 cursor: pointer;
-                display: inline-flex;
-                align-items: center;
             }
         </style>
         <div part="wrapper">
